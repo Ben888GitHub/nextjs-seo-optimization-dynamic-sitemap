@@ -1,13 +1,17 @@
-import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 
 function Capsule({ capsule }) {
 	return (
 		<div>
-			<NextSeo
+			{/* <NextSeo
 				title={capsule.type}
 				description={capsule.last_update}
 				defaultTitle={capsule.type}
-			/>
+			/> */}
+			<Head>
+				<title>{capsule.type}</title>
+				<meta name="description" content={capsule.last_update} />
+			</Head>
 			<h1>
 				{capsule.type} {capsule.serial}
 			</h1>

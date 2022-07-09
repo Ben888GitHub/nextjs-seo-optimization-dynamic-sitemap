@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import useSWR from 'swr';
-import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 
 const fetcher = () =>
 	fetch('https://api.spacexdata.com/v4/capsules').then((r) => r.json());
@@ -10,11 +10,15 @@ function Capsules() {
 
 	return (
 		<div>
-			<NextSeo
+			{/* <NextSeo
 				title="Capsules"
 				description="List of Capsules from SpaceX API"
 				defaultTitle="Capsules"
-			/>
+			/> */}
+			<Head>
+				<title>Capsules</title>
+				<meta name="description" content="List of Capsules from SpaceX API" />
+			</Head>
 			<h1>Capsules</h1>
 			{data ? (
 				<ul>
